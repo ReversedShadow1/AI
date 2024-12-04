@@ -28,8 +28,8 @@ training_args = Seq2SeqTrainingArguments(
     output_dir="./codet5-python-finetuned",
     evaluation_strategy="epoch",
     learning_rate=5e-5,
-    per_device_train_batch_size=8,  # Smaller batch size
-    num_train_epochs=1,  # Fewer epochs
+    per_device_train_batch_size=8,  
+    num_train_epochs=1,  
     weight_decay=0.01,
     save_total_limit=2,
     fp16=True,  # Mixed-precision training
@@ -45,7 +45,6 @@ trainer = Seq2SeqTrainer(
     tokenizer=tokenizer,
 )
 
-# Train the Model
 trainer.train()
 
 # Save the Fine-Tuned Model
